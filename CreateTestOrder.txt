@@ -1,0 +1,372 @@
+/*	public static void main(String[] args) {
+		
+		final String Source = "C:\\Applications\\XMLFILES\\SOURCE\\SIT DW orders";
+		final String SourcePath = "C:\\Applications\\XMLFILES\\SOURCE\\SIT DW orders\\";
+		final String Destination =  "C:\\Applications\\XMLFILES\\DEST\\"; 
+		final String orderDateXpath = "/orders/order/order-date";
+		final String orderNumberXpath =  "/orders/order/@order-no";  // NB is a node attribute.
+
+		try {
+					
+			File folder = new File(Source);
+			File[] listOfFiles = folder.listFiles();
+			int i = 0;
+			
+			for (File file : listOfFiles) {
+		    
+				i++;
+					
+				if (file.isFile()) {
+					
+			       // Remove for actual run 
+			    	//System.out.println(file.getName() + " count = " + String.valueOf(i) );
+			    	
+			    	DocumentBuilderFactory f = DocumentBuilderFactory.newInstance();
+					DocumentBuilder b = f.newDocumentBuilder();
+					Document doc = b.parse(new File(SourcePath + file.getName()));
+		
+					//XPath xPath = XPathFactory.newInstance().newXPath();
+					//NodeList orders = (NodeList) xPath.evaluate("/orders/order", doc, XPathConstants.NODESET);
+					
+						
+					//System.out.println("Number of orders in file = " +  String.valueOf(orders.getLength()) );
+											
+					
+					// ORDER-DATE NODE
+					XPath xPath = XPathFactory.newInstance().newXPath();
+					Node orderDatenode = (Node) xPath.compile(orderDateXpath).evaluate(doc, XPathConstants.NODE);
+					orderDatenode.setTextContent("28/09/1965");
+ 
+					//ORDER-NO NODE NB: this is an attribute
+					xPath = XPathFactory.newInstance().newXPath();
+					Node orderNumber = (Node) xPath.compile(orderNumberXpath).evaluate(doc, XPathConstants.NODE);
+					orderNumber.setTextContent("UKF9900000" + String.valueOf(i)); 
+
+					Transformer tf = TransformerFactory.newInstance().newTransformer();
+					tf.setOutputProperty(OutputKeys.INDENT, "yes");
+					tf.setOutputProperty(OutputKeys.METHOD, "xml");
+					tf.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+			    	   	
+					DOMSource domSource = new DOMSource(doc);
+					StreamResult sr = new StreamResult(new File(Destination + file.getName()));
+					tf.transform(domSource, sr);		    		    	
+			    					
+			    					
+			    				
+			    }
+			}  */
+
+
+package xml;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.util.Hashtable;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+public class CreateTestOrderXML {
+	
+	/**************************************************************************************
+	 * Create test orders from existing XML files
+	 * Replacing  
+	 * main
+	 * @param args
+	 *************************************************************************************/
+	public static void main(String[] args) {
+						
+	    final String Source = "C:\\Applications\\XMLFILES\\LOADS-FULL";
+		final String SourcePath = "C:\\Applications\\XMLFILES\\LOADS-FULL\\";
+		final String Destination =  "C:\\Applications\\XMLFILES\\DEST\\"; 
+			
+		// Seed the OrderNum object.
+		BigInteger orderNum = new BigInteger("9000000000");	
+		BigInteger removal = new BigInteger("9000000000");
+
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder dBuilder; 
+
+		Hashtable< Integer, String >
+	    SKUhash = LoadSKUList();
+		int FilesWritten = 0;
+				
+		try {
+
+			File folder = new File(Source);
+			
+			File[] listOfFiles = folder.listFiles();
+			int i = 0;
+
+			for (File file : listOfFiles) {
+
+				i++;
+
+				if (file.isFile()) { 
+
+					dBuilder = dbFactory.newDocumentBuilder();
+					Document doc = dBuilder.parse(new File(SourcePath + file.getName()));
+					doc.getDocumentElement().normalize();
+									
+				
+					// only write if returns true.
+					if (CheckSKU(doc,"product-id",SKUhash)) {	
+							
+						//update order-num attribute value
+						orderNum = updateAttributeValue(doc,orderNum);
+										
+						//update Element value
+						updateElementValue(doc,"created-by","XXXXXX");
+						updateElementValue(doc,"customer-name","XXXXXX" );
+						updateElementValue(doc,"customer-email","XXXXXX" );
+						updateElementValue(doc,"title","XXXXXX");
+						updateElementValue(doc,"first-name","XXXXXX" );
+						updateElementValue(doc,"last-name","XXXXXX" );
+						updateElementValue(doc,"address1","XXXXXX" );
+						updateElementValue(doc,"city","XXXXXX" );
+						updateElementValue(doc,"customer-no","XXXXXX" ); 
+						
+						FilesWritten++;
+						Logger("UKF"+ orderNum.toString() + "," + SourcePath + file.getName());
+						// Write the updated XML to a new file using the original FatFace filename format for xml.orders. 
+						doc.getDocumentElement().normalize();
+						TransformerFactory transformerFactory = TransformerFactory.newInstance();
+						Transformer transformer = transformerFactory.newTransformer();
+						DOMSource source = new DOMSource(doc);
+						StreamResult result = new StreamResult(new File(Destination + file.getName()));
+						transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+						transformer.transform(source, result);		
+					}
+				}  
+			} 
+							
+			orderNum = orderNum.subtract(removal); // Truncates the original  BigInteger
+						
+			System.out.println(String.valueOf(FilesWritten) + " files harvested with provided SKU line items, yielding " + orderNum.toString() + " order(s) from a total of " + String.valueOf(i) +" Files in total " );
+
+		} catch (SAXException | ParserConfigurationException | IOException | TransformerException e1) {
+			e1.printStackTrace();			
+		} 
+	}
+
+	/************************************************************************************
+	 * Calculate the Order number based upon the parameter passed.
+	 * Loop through the order nodes replacing the order-number attribute
+	 * with the calculated order number, which is then returned inn an incremented 
+	 * state for use in the next file(s). 
+	 *   
+	 * @param doc
+	 * @param OrderNumNumeric
+	 * @return OrderNumNumeric
+	 * 
+	 ************************************************************************************/
+	private static BigInteger updateAttributeValue(Document doc,BigInteger OrderNumNumeric) {
+
+		BigInteger increment = new BigInteger("1");
+		final String OrderAlpha =  "UKF";
+		NodeList order = doc.getElementsByTagName("order"); 
+		String n = "";
+		Element orderElement = null;	
+				
+					
+		//For each order 
+		for(int i=0; i < order.getLength(); i++ ){
+					
+			
+			n= String.valueOf(i);
+				
+			OrderNumNumeric = OrderNumNumeric.add(increment);	
+			orderElement = (Element) order.item(i);			
+	    			
+			orderElement.setAttribute("order-no", OrderAlpha + OrderNumNumeric);
+			
+			updateExistingOrderNumsElementValue(doc,"original-order-no",OrderAlpha + OrderNumNumeric,i);
+			updateExistingOrderNumsElementValue(doc,"current-order-no",OrderAlpha + OrderNumNumeric,i);
+			
+	    	
+		}
+			
+		return OrderNumNumeric;
+	}
+	
+	
+	
+	/******************************************************************************
+	 * updateExistingOrderNumsElementValue
+	 * @param doc
+	 * @param elementToUpdate
+	 * @param updatevalue
+	 ******************************************************************************/
+	private static void updateExistingOrderNumsElementValue(Document doc, String elementToUpdate, String updatevalue, int occurrence) {
+		
+		NodeList orderNodelist = doc.getElementsByTagName("order");
+		Element order = null;
+				
+			order = (Element) orderNodelist.item(occurrence);	
+			Node name = order.getElementsByTagName(elementToUpdate).item(0).getFirstChild();
+			name.setNodeValue(updatevalue);	
+	}
+	
+
+	/******************************************************************************
+	 * updateElementValue
+	 * @param doc
+	 * @param elementToUpdate
+	 * @param updatevalue
+	 ******************************************************************************/
+	private static void updateElementValue(Document doc, String elementToUpdate, String updatevalue) {
+		
+		NodeList orderNodelist = doc.getElementsByTagName("order");
+		Element order = null;
+		
+		//For each order
+		for(int i=0; i < orderNodelist.getLength(); i++){
+			//System.out.println(updatevalue);
+			order = (Element) orderNodelist.item(i);	
+			Node name = order.getElementsByTagName(elementToUpdate).item(0).getFirstChild();
+			name.setNodeValue(updatevalue);	
+		}
+	}
+	
+	
+	/******************************************************************************
+	 * updatePaymentElements
+	 * @param doc
+	 * @param elementToUpdate
+	 * @param updatevalue
+	 ******************************************************************************/
+	private static void updatePaymentElements(Document doc, String elementToUpdate, String updatevalue) {
+
+		NodeList LineItemNodelist = doc.getElementsByTagName("product-lineitem");
+		Element item = null;
+		boolean bWriteThatFile = false;
+
+		// For each line item 
+		for(int i=0; i < LineItemNodelist.getLength(); i++){
+			item = (Element) LineItemNodelist.item(i);
+			Node sku = item.getElementsByTagName(elementToUpdate).item(0).getFirstChild();
+
+			sku.getNodeValue();   
+
+		} 
+
+	}
+
+	
+	/******************************************************************************
+	 * CheckSKU
+	 * sku.setNodeValue(updatevalue);
+	 * System.out.println(sku.getNodeValue());
+	 * //System.out.println(String.valueOf(orderNodelist.getLength()));
+	 * @param doc
+	 * @param elementToUpdate
+	 * @param hash
+	 * @return
+	 ********************************************************************************/
+	private static boolean CheckSKU(Document doc, String elementToUpdate, Hashtable< Integer, String> hash) {
+
+		NodeList orderNodelist = doc.getElementsByTagName("product-lineitem");
+		Element item = null;
+		boolean bWriteThatFile = false;
+		
+		//loop for each order
+		for(int i=0; i < orderNodelist.getLength(); i++){
+			item = (Element) orderNodelist.item(i);
+			Node sku = item.getElementsByTagName(elementToUpdate).item(0).getFirstChild();
+			
+			// Here we must compare against hash table of imported SKUs
+			if (hash.containsValue(sku.getNodeValue())) {   
+				bWriteThatFile = true;	
+				// SKU found, no need to continue checking, 
+				// just bomb out here and Return true so file will be written
+				// Straight away.
+				break; 
+			} 
+
+		}
+
+		return bWriteThatFile;
+	}	
+	
+	/************************************************************************************
+	 * LoadSKUList
+	 * for ( int j = 0 ; j < hash.size() ; j++) {
+	 *			System.out.println(String.valueOf(j) + " " + hash.get(j));
+	 *	}
+	 * 
+	 * @param doc
+	 * @param elementToUpdate
+	 * @return
+	 ************************************************************************************/
+	private static Hashtable LoadSKUList() {
+		
+		final String sku_path =  "C:\\Applications\\XMLFILES\\SKU\\SKUs.txt";
+		
+		Hashtable< Integer, String > 
+		hash = new Hashtable< Integer, String >();
+		
+		try {
+					
+			BufferedReader rd = new BufferedReader( new FileReader (sku_path));
+			String line;
+
+			int i = 0;
+
+			while ((line = rd.readLine()) != null){
+				
+				hash.put(i, line);
+				i++;
+			}
+					
+			System.out.println(" *** " + String.valueOf(i) +  " SKUs Loaded ***");
+			
+		} catch (IOException e) {
+		
+			e.printStackTrace();
+		}
+			
+		return hash;	
+	}
+	
+	/*****************************************************************************
+	 * Logger -  Using buffered Writer because 
+	 * we have to potentially update the file many times. 
+	 * @param Entry -  the value to write
+	 *****************************************************************************/
+	private static void Logger(String logEntry) {
+
+		final String Destination =  "C:\\Applications\\XMLFILES\\DEST\\Log\\Log.csv";
+
+		try(FileWriter fileWriter = new FileWriter( Destination, true);
+				BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+				PrintWriter PrintWriter = new PrintWriter(bufferedWriter))
+		{
+			PrintWriter.println(logEntry);	    
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+
+	}			
+}
