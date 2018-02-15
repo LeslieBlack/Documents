@@ -1,0 +1,9 @@
+﻿body{ font-family:Calibri; color:#003366; font-size:11pt; }  
+.SectionTitle{font-family:Calibri;font-weight:bold;font-size:12pt;text-decoration:underline;} 
+.FormSection{font-family:Calibri;width:100%;border:solid #003366 1px;}
+.FormSectionTitle{font-family:Calibri;font-weight:bold;font-size:10pt; }
+.FormBottomSection{font-family:Calibri;border:solid #003366 1px;width:100%;}
+.txt{width:150px;}   
+.dlTableHeader{font-family:Calibri;font-size:12pt;color:White;font-weight:bold;background-color:#00335B;}
+.MainTbl{border:solid 1px #003366;}
+.StoresList{ font-size:10px;}

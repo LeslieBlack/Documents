@@ -1,0 +1,47 @@
+﻿.drp{font-size:10pt;font-family:Tahoma;text-transform:capitalize;}
+.Title{font-weight:bold;font-size:12pt;font-family:Tahoma; }
+.SectionTitle{font-weight:bold;font-size:10pt;font-family:Tahoma;}
+.TitleNotes{font-size:8pt;font-family:Tahoma; font-style:italic;}
+.labels{font-weight:bold;font-size:10pt;font-family:Tahoma;}
+.RowSpacer{height:10px;}
+.UserDesc{font-weight:bold;font-size:11pt;font-family:Tahoma; text-transform:capitalize}
+body {font-family:Tahoma;font-size:10pt;
+    margin-left: 0px;
+}
+.GeneralComments{width:450px;height:40px;font-family:Tahoma;}
+.ImageCell{padding:0 0 0 0;}
+.MainBorder
+{
+	BORDER-RIGHT: #dbdddc 4px solid; 
+	BORDER-TOP: #dbdddc 4px solid; 
+	BORDER-LEFT: #dbdddc 4px solid; 
+	BORDER-BOTTOM: #dbdddc 4px solid;	
+}
+.GridStyle{BORDER: #dbdddc 1px solid;}
+.MainBorderPrint{BORDER: #dbdddc 4px solid;width:759px;}
+
+.SectionBorder
+{
+	BORDER-RIGHT: #dbdddc 1px solid; 
+	BORDER-TOP: #dbdddc 1px solid; 
+	BORDER-LEFT: #dbdddc 1px solid; 
+	BORDER-BOTTOM: #dbdddc 1px solid;
+	 
+}
+.GoButton{width:30px; font-size:11px;font-family:Tahoma;}
+
+.txtCode{width:100px; border:0 0 0 0;font-family:Tahoma;font-size:10pt}
+.txtItemDescription{width:300px; border:0 0 0 0;font-family:Tahoma;font-size:10pt}
+.txtColour{width:100px; border:0 0 0 0;font-family:Tahoma;font-size:10pt}
+.txtSize{width:50px; border:0 0 0 0;font-family:Tahoma;font-size:10pt;text-align:center;}
+.txtQty{width:50px; border:0 0 0 0;font-family:Tahoma;font-size:10pt; text-align:center;}
+.txtPrice{width:50px; border:0 0 0 0;font-family:Tahoma;font-size:10pt}
+.txtExtn{width:50px; border:0 0 0 0; BORDER: #dbdddc 1px solid;font-family:Tahoma;font-size:10pt}
+.txtAddress{BORDER: #dbdddc 1px solid;font-family:Tahoma;font-size:10pt}
+.RowSpacer{Height:25px; border:0 0 0 0;}
+
+.GridItem{font-family:Tahoma;font-size:10pt;text-align:left;padding:0 0 0 0;}
+.GridHeader{font-family:Tahoma;	font-size:10pt;	font-weight:bold; background-color:#eeeeee;padding:0 0 0 0; text-align:center;}
+.SummaryHeader{}
+
+
