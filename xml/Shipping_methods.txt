@@ -1,0 +1,4 @@
+<shipping-method>standardGBP</shipping-method>
+<shipping-method>nextdayGBP</shipping-method>
+<shipping-method>overseasGBP</shipping-method>
+<shipping-method>delivertostoreGBP</shipping-method>
