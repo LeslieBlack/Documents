@@ -1,0 +1,4 @@
+1. search  sit-s-dw-data-int mule logs for order number
+NB: some log messages are set to DEBUG level in mule flows so wont show in Production LOGS
+
+

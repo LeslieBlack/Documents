@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:ImportGRNResponse
+    xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ns2="http://xdi/FFService.wsdl">
+    <importGRNOUTPUT:importGRNOUTPUT
+        xmlns="http://www.prologic.com/schema/cims/ff_service/importGRN"
+        xmlns:importGRNOUTPUT="http://www.prologic.com/schema/cims/ff_service/importGRN" CalledAt="Thu May 17 14:32:54 UTC 2018 [2458256:52374.363372000]" Timestamp="2018-05-17T14:39:05" Version="1.0">
+        <GRNS>
+            <transaction id="c924a1e2-bed9-4a3d-819b-dc49a6ce47f7" status="SUCCESS"/>
+            <transaction id="adc503a8-7d0c-442c-b044-79f87c9c5236" status="SUCCESS"/>
+            <transaction id="9a6a93db-5ea0-4030-868e-386339e18801" status="SUCCESS"/>
+            <transaction id="4f3b49aa-4985-4dff-9584-69e39ff5bdbf" status="SUCCESS"/>
+            <transaction id="5f4f8478-0414-406b-9c9b-9b918e1e3058" status="SUCCESS"/>
+            <transaction id="db1e77f6-1e35-44f8-af78-36d501ed68fd" status="SUCCESS"/>
+            <transaction id="7f00c32f-2cb4-4345-9bb4-f208e04e0677" status="SUCCESS"/>
+            <transaction id="d7e0b7a5-6154-4eee-81df-9fdde040020f" status="SUCCESS"/>
+            <transaction id="d26da748-c8ad-407a-8cff-b9daa8826dfb" status="SUCCESS"/>
+            <transaction id="5374c2a7-8904-4dd2-839b-28092c38ec97" status="SUCCESS"/>
+            <transaction id="a769793a-cb82-4a00-914f-cd8239396547" status="SUCCESS"/>
+            <transaction id="01a4e95c-807e-44d5-82d2-d6488e23aa3f" status="SUCCESS"/>
+            <transaction id="82392031-39bf-4e8c-9c53-6f9ca923bac3" status="SUCCESS"/>
+            <transaction id="c9a90943-1dd8-4435-8918-b38b90dc1e5f" status="SUCCESS"/>
+            <transaction id="6c80c933-1eea-4e53-bc14-2d3c90f04fa9" status="SUCCESS"/>
+            <transaction id="5d9347da-211c-4e34-bc31-2007c38a5b8a" status="SUCCESS"/>
+            <transaction id="dfd2c77a-45c2-4d1f-bcfd-23bcce871fe8" status="SUCCESS"/>
+            <transaction id="0cc40750-0534-4034-a0c5-834005192ac7" status="SUCCESS"/>
+            <transaction id="e1954be8-f424-4c33-b293-ee85696ea786" status="SUCCESS"/>
+            <transaction id="37a2edce-29b8-4fb9-a84a-6d5f8237afaf" status="SUCCESS"/>
+            <transaction id="c3ac62eb-9857-48af-8f1d-51fc16c335e3" status="SUCCESS"/>
+            <transaction id="282f00e1-4698-4eda-8814-537a5820f186" status="SUCCESS"/>
+            <transaction id="b03d52f4-284c-4b69-8439-3c62dd1fb498" status="SUCCESS"/>
+            <transaction id="3cdd6bba-d2f5-41fe-8cc5-8bd0709af74c" status="SUCCESS"/>
+            <transaction id="b2915dd9-5d4d-4678-a9c7-8ff986ba0699" status="SUCCESS"/>
+            <transaction id="ca699eec-016d-4eb6-b656-0ec5f25f2353" status="SUCCESS"/>
+            <transaction id="b742035e-7375-4402-8abd-7b783618a834" status="SUCCESS"/>
+            <transaction id="b6344e09-a480-4ad6-a6b0-631ca19bdde0" status="SUCCESS"/>
+            <transaction id="1d686ccc-9d03-42fd-9cdc-984147a5332b" status="SUCCESS"/>
+            <transaction id="624d0209-c682-45b8-b09e-fa14f34a6c5d" status="SUCCESS"/>
+            <transaction id="33325b54-c0ba-4e83-8212-b1353c69878c" status="SUCCESS"/>
+            <transaction id="41f072c7-41b7-460b-a067-96cdd575f11d" status="SUCCESS"/>
+            <transaction id="64069d85-86ce-4ee1-a90c-8970b2a3027c" status="SUCCESS"/>
+            <transaction id="a15d1840-1a07-4383-8bdd-7dfb3165a015" status="SUCCESS"/>
+            <transaction id="2ad608fb-8bad-491c-9cac-2e29129ada5b" status="SUCCESS"/>
+            <transaction id="4e255dc7-301c-4c3b-afae-492ecb570b34" status="SUCCESS"/>
+            <transaction id="1b1f0d85-a33c-4396-80e3-0adc5b0874e2" status="SUCCESS"/>
+            <transaction id="53e6dfa1-9a10-4320-9e1d-51d430285e97" status="SUCCESS"/>
+            <transaction id="dfb63c77-2425-45c8-a2b8-6299d6697faf" status="SUCCESS"/>
+            <transaction id="0abdf3d2-7469-490d-8251-63070d408179" status="SUCCESS"/>
+            <transaction id="29ac0f1c-9199-4ac1-adc2-5e30ae79dbe9" status="SUCCESS"/>
+            <transaction id="6001f2d2-f200-40d1-8c21-59c3f56dc0e1" status="SUCCESS"/>
+            <transaction id="9c7da42d-71aa-46fd-a695-e768d57b1516" status="SUCCESS"/>
+            <transaction id="d414930d-f9e2-41fe-acbf-c0bd9e53500d" status="SUCCESS"/>
+            <transaction id="25d9d745-f0c6-472a-91f4-38c3e39a6bfc" status="SUCCESS"/>
+            <transaction id="5bc68a73-4afc-4daa-bfd9-940d71a7464f" status="SUCCESS"/>
+            <transaction id="6dc21c94-4929-4310-bbe9-003274a08c11" status="SUCCESS"/>
+            <transaction id="a976db07-8848-464f-88c5-d0dbde98882b" status="SUCCESS"/>
+            <transaction id="bfcd5bd0-9860-4afa-9626-0c4d2a665b39" status="SUCCESS"/>
+            <transaction id="4ddfbc97-557e-4341-897a-54f977360d3b" status="SUCCESS"/>
+            <transaction id="5aa4a295-6ced-44f4-9d18-306b1ab72c58" status="SUCCESS"/>
+        </GRNS>
+    </importGRNOUTPUT:importGRNOUTPUT>
+</ns2:ImportGRNResponse> 

@@ -1,0 +1,11 @@
+-- select * from t_audit where log_message like '%PreAdviceReceipt-201805171500%'
+--select * from t_audit where request_id = '5fc2c261-8f63-4d09-bd02-e6e85dedfa8f' order by [message_receive_time] asc
+select * from t_audit where log_message like '%InvTransaction-201805211345%' where 
+	record_create_time > '2018-05-20 00:07:00.00'
+	
+	
+	select * from t_audit where log_message like '%PreAdviceReceipt-201805171500%' and record_create_time > '2018-05-18'
+select * from t_audit where request_id = '5fc2c261-8f63-4d09-bd02-e6e85dedfa8f' order by [message_receive_time] asc
+
+select * from t_audit where log_message like '%InvTransaction-201805211345%' and 
+record_create_time > '2018-05-20 00:07:00.00'

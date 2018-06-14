@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:ImportStockMoveResponse
+    xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ns2="http://xdi/FFService.wsdl">
+    <importStockMoveOUTPUT:importStockMoveOUTPUT
+        xmlns="http://www.prologic.com/schema/cims/ff_service/importStockMove"
+        xmlns:importStockMoveOUTPUT="http://www.prologic.com/schema/cims/ff_service/importStockMove" CalledAt="Tue May 22 10:19:33 UTC 2018 [2458261:37173.318250000]" Timestamp="2018-05-22T10:19:39" Version="1.0">
+        <MOVES>
+            <transaction id="ad8244ad-18b6-4eed-be3a-a9b5990d162f" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="ad8244ad-18b6-4eed-be3a-a9b5990d162f" ProcessNum="1203093" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="b8592028-6ba4-4a44-8062-493f9b57428f" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="b8592028-6ba4-4a44-8062-493f9b57428f" ProcessNum="1203106" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="911bf4d1-7803-4669-a43a-05330b8f3f74" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="911bf4d1-7803-4669-a43a-05330b8f3f74" ProcessNum="1203116" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="6aa3d649-2c5e-4210-9f38-ea92b1b1ab56" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="6aa3d649-2c5e-4210-9f38-ea92b1b1ab56" ProcessNum="1203131" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="b5f58a05-469f-4cec-9ad0-e8e25921db9c" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="b5f58a05-469f-4cec-9ad0-e8e25921db9c" ProcessNum="1203143" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="572ac821-0da4-40ea-837f-5b6fd79db637" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="572ac821-0da4-40ea-837f-5b6fd79db637" ProcessNum="1203153" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="01017278-2e73-490f-b38f-ee02454c8813" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="01017278-2e73-490f-b38f-ee02454c8813" ProcessNum="1203160" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="654d2613-fd89-481f-8588-f60e3471792d" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="654d2613-fd89-481f-8588-f60e3471792d" ProcessNum="1203168" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="f042a4aa-af78-41ee-b23e-585ff2bcd840" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="f042a4aa-af78-41ee-b23e-585ff2bcd840" ProcessNum="1203179" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="98b1ad65-247b-4289-aca9-daf817d399cd" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="98b1ad65-247b-4289-aca9-daf817d399cd" ProcessNum="1203191" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="0a076fdb-6d81-4c53-bcd7-eee51bf8f5a6" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="0a076fdb-6d81-4c53-bcd7-eee51bf8f5a6" ProcessNum="1203198" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="acb68823-eba4-4c53-b653-1a226af66b1b" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="acb68823-eba4-4c53-b653-1a226af66b1b" ProcessNum="1203203" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="8c809458-2400-47d4-ac36-b79f42dc4ebb" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="8c809458-2400-47d4-ac36-b79f42dc4ebb" ProcessNum="1203212" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="924269d6-fdbb-4033-93a8-9701b9c827c2" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="924269d6-fdbb-4033-93a8-9701b9c827c2" ProcessNum="1203213" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="18531291-0f16-4090-a7d3-ae465d35fbec" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="18531291-0f16-4090-a7d3-ae465d35fbec" ProcessNum="1203222" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="369ab8eb-e1e3-43e3-bbd3-76e1fe0c77e5" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="369ab8eb-e1e3-43e3-bbd3-76e1fe0c77e5" ProcessNum="1203229" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="9bacaa7e-fd61-4dea-a668-1129328e542e" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="9bacaa7e-fd61-4dea-a668-1129328e542e" ProcessNum="1203235" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="8b6e8739-fae6-480a-98c8-ff27baf2e7f2" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="8b6e8739-fae6-480a-98c8-ff27baf2e7f2" ProcessNum="1203243" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="8a8c41ab-58f5-4f0d-905f-7df7d3c0e0fe" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="8a8c41ab-58f5-4f0d-905f-7df7d3c0e0fe" ProcessNum="1203251" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="4a756687-699d-46c8-8187-8a430bc42d98" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="4a756687-699d-46c8-8187-8a430bc42d98" ProcessNum="1203256" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="e93c55cd-9a29-4a5e-8a50-0e7613f9452c" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="e93c55cd-9a29-4a5e-8a50-0e7613f9452c" ProcessNum="1203265" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+            <transaction id="becb75ce-2b8d-459c-b5ea-594dd237fc3f" status="failure">
+                <ERRORS>
+                    <ERROR Bugline="400" Caller="Mulesoft" Code="10022" JobNum="becb75ce-2b8d-459c-b5ea-594dd237fc3f" ProcessNum="1203272" ProgramUnit="importStockMove" ServiceOperation="ff_service/importStockMove" ServiceVersion="1.0">
+                        <TEXT>Stock level failure</TEXT>
+                        <INFO/>
+                    </ERROR>
+                </ERRORS>
+            </transaction>
+        </MOVES>
+    </importStockMoveOUTPUT:importStockMoveOUTPUT>
+</ns2:ImportStockMoveResponse> 
