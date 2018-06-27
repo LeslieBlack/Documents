@@ -1,0 +1,74 @@
+/*  connect to my local test instance LT-DJ7Q3M2 */
+--update Details_Test set Date_Added = '2011-06-06 09:49:43.717' where Id = 5
+
+/*CREATE  PROCEDURE DeleteRows()
+AS
+BEGIN
+DELETE FROM Details_Test WHERE DATEADD(year,7 , Date_Added) < getdate()
+END */
+
+INSERT INTO [dbo].[Details_Test]
+           (
+           [Name]
+           ,[Number],
+		   [Date_Added]
+          )
+     VALUES
+           (' Test name3', ' ****','2011-06-07 09:49:43.717') 
+
+		   select * from Details_Test
+		   
+		   
+
+// Need to convert to date time for above to work because was  captures as  a string 		   
+DECLARE @date varchar(11)
+
+SET @date = '08-May-2019'
+select convert(DATETIME, @date,105) 
+
+select convert(DATETIME, '08-May-2018') 
+
+
+
+*************************************************************************
+
+DELETE FROM Details_Test WHERE DATEADD(year,7 , Date_Added) < getdate()
+
+SELECT convert(DATETIME, String_Date,105), * FROM Details_Test WHERE DATEADD(year,7 , convert(DATETIME, String_Date,105) ) < getdate()
+SELECT * from Details_Test
+
+INSERT INTO [dbo].[Details_Test]
+           (
+           [Name]
+           ,[Number],
+		   [Date_Added],
+		   [String_Date]
+          )
+     VALUES
+           (' NOT GOOOOOOO', ' ****','2011-06-06 09:49:43.717', '05-June-2011') 
+
+select * from Details_Test
+
+
+
+
+ /*UPDATE	[FatIntraface].[dbo].[tblHO_HS_AccidentReport]
+	SET		[DeleteFlag] = 1 WHERE DATEADD(year,7 ,convert(DATETIME, AccDate,105)) < getdate() */
+
+
+--select * from [FatIntraface].[dbo].[tblSI_HS_AccidentReport] -- where reportID  > 147
+
+-- Delete from [FatIntraface].[dbo].[tblSI_HS_AccidentReport] where ReportID = 937
+select * from [FatIntraface].[dbo].[tblSI_HS_AccidentReport] 
+[FatIntraface].[dbo].[tblSI_HS_AccidentReport]
+
+
+select * from  [FatIntraface].[dbo].[tblHO_HS_AccidentReport] /
+
+
+
+DELETE FROM [FatIntraface].[dbo].[tblSI_HS_AccidentReport]  WHERE DATEADD(year,7 ,convert(DATETIME, AccDate,105)) < getdate()
+DELETE FROM [FatIntraface].[dbo].[tblHO_HS_AccidentReport]  WHERE DATEADD(year,7 ,convert(DATETIME, AccDate,105)) < getdate()
+
+
+
